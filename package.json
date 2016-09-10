@@ -40,5 +40,8 @@
   "dependencies": {
     "pull-split": "^0.2.0",
     "pull-stringify": "^1.2.2"
-  }
+  },
+  "contributors": [
+    "David Dias <daviddias.p@gmail.com>"
+  ]
 }
