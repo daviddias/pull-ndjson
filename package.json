@@ -24,7 +24,10 @@
     "url": "https://github.com/dignifiedquire/pull-length-prefixed/issues"
   },
   "keywords": [
-    "pull-streams"
+    "pull-streams",
+    "json",
+    "ndjson",
+    "pull-stream"
   ],
   "author": "David Dias <daviddias@ipfs.io>",
   "license": "MIT",
@@ -34,11 +37,11 @@
     "chai": "^3.5.0",
     "ndjson": "^1.4.3",
     "pull-pair": "^1.1.0",
-    "pull-stream": "^3.4.5",
     "pull-stream-to-stream": "^1.3.3"
   },
   "dependencies": {
     "pull-split": "^0.2.0",
+    "pull-stream": "^3.4.5",
     "pull-stringify": "^1.2.2"
   },
   "contributors": [

@@ -40,9 +40,7 @@ describe('pull-ndjson', () => {
     )
   })
 
-  // TODO
-  //   discover how to pass the error forward
-  it.skip('fails to parse invalid data', (done) => {
+  it('fails to parse invalid data', (done) => {
     pull(
       pull.values([
         new Buffer('hey')
@@ -50,6 +48,8 @@ describe('pull-ndjson', () => {
       ndjson.parse(),
       pull.collect((err, data) => {
         expect(err).to.exist
+        expect(data).to.be.empty
+        done()
       })
     )
   })
