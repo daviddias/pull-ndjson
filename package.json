@@ -45,6 +45,7 @@
     "pull-stringify": "^1.2.2"
   },
   "contributors": [
-    "David Dias <daviddias.p@gmail.com>"
+    "David Dias <daviddias.p@gmail.com>",
+    "Friedel Ziegelmayer <dignifiedquire@gmail.com>"
   ]
 }
