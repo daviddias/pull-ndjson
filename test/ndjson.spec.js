@@ -62,7 +62,7 @@ describe('pull-ndjson', () => {
       ndjson.serialize(),
       pull.collect((err, data) => {
         expect(err).to.not.exist()
-        expect(data.join('')).to.be.empty()
+        expect(data).to.be.empty()
         done()
       })
     )
