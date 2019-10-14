@@ -1,17 +1,24 @@
 'use strict'
 
-const stringify = require('pull-stringify')
+const { ldjson } = require('pull-stringify')
 const split = require('pull-split')
-const pull = require('pull-stream')
+const pull = require('pull-stream/pull')
+const filter = require('pull-stream/throughs/filter')
+const map = require('pull-stream/throughs/map')
 
 exports = module.exports
 
 exports.parse = () => {
   return pull(
     split('\n'),
-    pull.filter(),
-    pull.map(JSON.parse)
+    filter(),
+    map(JSON.parse)
   )
 }
 
-exports.serialize = stringify.ldjson
+exports.serialize = () => {
+  return pull(
+    ldjson(),
+    filter()
+  )
+}
