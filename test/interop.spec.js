@@ -1,7 +1,9 @@
 /* eslint-env mocha */
 'use strict'
 
-const expect = require('chai').expect
+const chai = require('chai')
+chai.use(require('dirty-chai'))
+const { expect } = chai
 const pull = require('pull-stream')
 const pair = require('pull-pair')
 const toStream = require('pull-stream-to-stream')
@@ -31,7 +33,7 @@ describe('interop', () => {
       p.source,
       ndjsonPull.parse(),
       pull.collect((err, data) => {
-        expect(err).to.not.exist
+        expect(err).to.not.exist()
         expect(data).to.eql(values)
         done()
       })

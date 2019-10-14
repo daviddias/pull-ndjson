@@ -1,7 +1,9 @@
 /* eslint-env mocha */
 'use strict'
 
-const expect = require('chai').expect
+const chai = require('chai')
+chai.use(require('dirty-chai'))
+const { expect } = chai
 const pull = require('pull-stream')
 const ndjson = require('../src')
 
@@ -33,7 +35,7 @@ describe('pull-ndjson', () => {
       ndjson.serialize(),
       ndjson.parse(),
       pull.collect((err, data) => {
-        expect(err).to.not.exist
+        expect(err).to.not.exist()
         expect(data).to.eql(values)
         done()
       })
@@ -43,12 +45,24 @@ describe('pull-ndjson', () => {
   it('fails to parse invalid data', (done) => {
     pull(
       pull.values([
-        new Buffer('hey')
+        Buffer.from('hey')
       ]),
       ndjson.parse(),
       pull.collect((err, data) => {
-        expect(err).to.exist
-        expect(data).to.be.empty
+        expect(err).to.exist()
+        expect(data).to.be.empty()
+        done()
+      })
+    )
+  })
+
+  it('serializes empty stream', (done) => {
+    pull(
+      pull.empty(),
+      ndjson.serialize(),
+      pull.collect((err, data) => {
+        expect(err).to.not.exist()
+        expect(data.join('')).to.be.empty()
         done()
       })
     )
