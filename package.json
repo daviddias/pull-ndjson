@@ -1,6 +1,6 @@
 {
   "name": "pull-ndjson",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A pull-streams ndjson parser and serializer, inspired by and compatible with [ndjson](https://www.npmjs.com/package/ndjson).",
   "main": "src/index.js",
   "scripts": {
@@ -46,6 +46,7 @@
   },
   "contributors": [
     "David Dias <daviddias.p@gmail.com>",
-    "Friedel Ziegelmayer <dignifiedquire@gmail.com>"
+    "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
+    "achingbrain <alex@achingbrain.net>"
   ]
 }
