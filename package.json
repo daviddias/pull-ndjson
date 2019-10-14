@@ -2,8 +2,7 @@
   "name": "pull-ndjson",
   "version": "0.1.1",
   "description": "A pull-streams ndjson parser and serializer, inspired by and compatible with [ndjson](https://www.npmjs.com/package/ndjson).",
-  "main": "lib/index.js",
-  "jsnext:main": "src/index.js",
+  "main": "src/index.js",
   "scripts": {
     "lint": "aegir lint",
     "build": "aegir build",
